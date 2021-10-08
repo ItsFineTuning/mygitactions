@@ -1,0 +1,36 @@
+name: Validation-Statistic
+
+on: push
+
+jobs:
+  analyze:
+    name: analyze the sound data (valid or not)
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+    - name: Check out repository code
+      uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Install requirements
+      run: pip install -r requirements.txt
+    - name: Run analyzer
+      run: python tools/analyze_script.py
+      
+  stats:
+    name: satistics collection
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+    - name: Check out repository code
+      uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Install requirements
+      run: pip install -r requirements.txt
+    - name: Run analyzer
+      run: python tools/stats_script.py

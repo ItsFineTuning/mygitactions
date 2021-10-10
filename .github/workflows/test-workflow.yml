@@ -38,7 +38,9 @@ jobs:
 #     - name: install soundfile
 #       run: sudo pip install soundfile
     - name: IDK
-      run: sudo apt-get install libsndfile1
+      run: |
+        python3 -m pip install -U pip
+        sudo apt-get install libsndfile1
     - name: Install requirements
       run: sudo pip3 install -r requirements.txt
     - name: Run stats collector

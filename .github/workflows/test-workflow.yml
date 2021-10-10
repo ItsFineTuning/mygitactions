@@ -39,7 +39,7 @@ jobs:
 #       run: sudo pip install soundfile
     - name: IDK
       run: |
-        python -m pip3 install -U pip
+        pip3 install --upgrade pip
         sudo apt-get install libsndfile1
     - name: Install requirements
       run: sudo pip3 install -r requirements.txt

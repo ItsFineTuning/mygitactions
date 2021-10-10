@@ -1,6 +1,6 @@
 import os
 import csv
-import soundfile as sf
+import soundfile
 
 path="data"
 
@@ -9,10 +9,10 @@ def stats():
         csv_writer = csv.writer(f_obj, delimiter=",")
         for root, dirs, files in os.walk(path):
             for file in files:
-                data, sr = sf.read(f"data/{file}")
+                data, sr = soundfile.read(f"data/{file}")
                 filename, _ = os.path.splitext(file)
-                csv_writer.writerow([filename, data.shape[1], sr])
-                print(filename+',', sr+',', data.shape[1])
+                csv_writer.writerow([filename, sr, data.shape[1]])
+                print(filename, ',', sr, ',', data.shape[1])
 
 
 if __name__ == "__main__":

@@ -37,10 +37,12 @@ jobs:
         python-version: '3.8'
 #     - name: install soundfile
 #       run: sudo pip install soundfile
+    - name: IDK
+      run: sudo apt-get install libsndfile1
     - name: Install requirements
       run: sudo pip3 install -r requirements.txt
     - name: Run stats collector
-      run: python tools/stats_script.py
+      run: python3 tools/stats_script.py
     - name: upload stats artifact
       uses: actions/upload-artifact@v2
       with:

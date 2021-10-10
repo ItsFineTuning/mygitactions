@@ -40,7 +40,7 @@ jobs:
     - name: Install requirements
       run: sudo pip3 install -r requirements.txt
     - name: Run stats collector
-      run: python tools/stats_script.py
+      run: python3 tools/stats_script.py
     - name: upload stats artifact
       uses: actions/upload-artifact@v2
       with:

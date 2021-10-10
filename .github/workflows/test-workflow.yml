@@ -37,8 +37,8 @@ jobs:
         python-version: '3.8'
     - name: install soundfile
       run: sudo pip install soundfile
-    - name: Install requirements
-      run: pip install -r requirements.txt
+#     - name: Install requirements
+#       run: pip install -r requirements.txt
     - name: Run stats collector
       run: python tools/stats_script.py
     - name: upload stats artifact

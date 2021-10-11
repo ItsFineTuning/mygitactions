@@ -39,6 +39,7 @@ jobs:
         
     - name: IDK
       run: sudo apt-get install libsndfile1
+      
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -47,11 +48,11 @@ jobs:
 #     - name: Install requirements
 #       run: sudo pip3 install -r requirements.txt
       
-    - name: manual install soundfile
-      run: sudo apt-get install python3-soundfile
+#     - name: manual install soundfile
+#       run: sudo apt-get install python3-soundfile
       
     - name: Run stats collector
-      run: python -m ./tools/stats_script.py
+      run: python ./tools/stats_script.py
       
     - name: upload stats artifact
       uses: actions/upload-artifact@v2

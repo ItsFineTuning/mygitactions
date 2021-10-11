@@ -42,9 +42,10 @@ jobs:
       run: sudo apt-get install libsndfile1
 
     - name: Install requirements
-      run: |
-        sudo pip3 install -r requirements.txt
-        sudo apt-get install python3-soundfile
+      run: sudo pip3 install -r requirements.txt
+      
+    - name: manual install soundfile
+      run: sudo apt-get install python3-soundfile
       
     - name: Run stats collector
       run: python3 tools/stats_script.py

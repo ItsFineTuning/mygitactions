@@ -41,6 +41,7 @@ jobs:
       run: |
         sudo apt update
         sudo apt install libsndfile1
+        sudo apt install ffmpeg
       
     - name: Install dependencies
       run: |

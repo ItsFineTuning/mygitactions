@@ -37,11 +37,14 @@ jobs:
       with:
         python-version: '3.8'
         
-    - name: IDK
-      run: |
-        sudo apt update
-        sudo apt install ffmpeg
-        sudo apt install libsndfile1
+    - name: apt update
+      run: sudo apt update
+        
+    - name: ffmpeg
+      run: sudo apt install ffmpeg
+      
+    - name: libsndfile1
+      run: sudo apt install libsndfile1
       
     - name: Install dependencies
       run: |

@@ -47,7 +47,7 @@ jobs:
       run: sudo apt-get install python3-soundfile
       
     - name: Run stats collector
-      run: python3 tools/stats_script.py
+      run: python3 ./tools/stats_script.py
       
     - name: upload stats artifact
       uses: actions/upload-artifact@v2

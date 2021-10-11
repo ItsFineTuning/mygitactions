@@ -10,6 +10,7 @@ def stats():
         csv_writer = csv.writer(f_obj, delimiter=",")
         for root, dirs, files in os.walk(path):
             for file in files:
+                print(soundfile.available_formats())
                 data, sr = soundfile.read(f"{path}/{file}")
                 filename, _ = os.path.splitext(file)
                 csv_writer.writerow([filename, sr, data.shape[1]])

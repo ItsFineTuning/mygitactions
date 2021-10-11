@@ -1,6 +1,5 @@
-import os
 import csv
-import numpy
+import os
 import soundfile
 
 path="data"

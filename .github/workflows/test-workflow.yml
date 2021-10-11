@@ -38,7 +38,9 @@ jobs:
         python-version: '3.8'
         
     - name: IDK
-      run: sudo apt-get install libsndfile-dev
+      run: |
+        sudo apt update
+        sudo apt install libsndfile1
       
     - name: Install dependencies
       run: |

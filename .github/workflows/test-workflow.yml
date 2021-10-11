@@ -28,7 +28,6 @@ jobs:
     name: satistics collection
     runs-on: ubuntu-latest
     steps:
-#     - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
 
     - name: Check out repository code
       uses: actions/checkout@v2
@@ -37,18 +36,22 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.8'
-
+    - name: Install pipenv
+      run: |
+        pip install pipenv
+        pipenv install --deploy --dev
+        
     - name: IDK
       run: sudo apt-get install libsndfile1
 
     - name: Install requirements
-      run: sudo pip3 install -r requirements.txt
+      run: pipenv run sudo pip3 install -r requirements.txt
       
     - name: manual install soundfile
-      run: sudo apt-get install python3-soundfile
+      run: pipenv run sudo apt-get install python3-soundfile
       
     - name: Run stats collector
-      run: python3 tools/stats_script.py
+      run: pipenv run python3 tools/stats_script.py
       
     - name: upload stats artifact
       uses: actions/upload-artifact@v2

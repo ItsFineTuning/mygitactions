@@ -34,7 +34,7 @@ jobs:
       with:
         lfs: true
     - name: Checkout lfs objects
-      run: git lfs checout
+      run: git lfs checkout
       
     - name: Set up Python 3.8
       uses: actions/setup-python@v2

@@ -60,6 +60,9 @@ jobs:
 #     - name: manual install soundfile
 #       run: sudo apt-get install python3-soundfile
       
+    - name: test wav
+      run: cat data/15362__djgriffin__tibetan-chant-1.wav
+      
     - name: Run stats collector
       run: python ./tools/stats_script.py
       

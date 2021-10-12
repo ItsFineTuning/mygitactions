@@ -15,7 +15,6 @@ def analyze():
                     is_valid = 0
                 csv_writer.writerow([filename, is_valid])
                 print(filename+',', is_valid)
-                # print("name = {}, extension = {}".format(filename, file_extension))
 
 if __name__ == "__main__":
     print('Start validation:\n')
